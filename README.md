@@ -1,6 +1,6 @@
 # UAS-Kelompok6B
 Project UAS PBO
-# 🍞 Hanari Bakery — Sistem Informasi Produksi dan Manajemen Produk
+# Hanari Bakery — Sistem Informasi Produksi dan Manajemen Produk
 
 > Proyek Akhir Pemrograman Berorientasi Objek (PBO)  
 > Program Studi Pendidikan Informatika dan komputer — FKIP UNS  
@@ -8,7 +8,7 @@ Project UAS PBO
 
 ---
 
-## 📋 Deskripsi Proyek
+## Deskripsi Proyek
 
 **Hanari Bakery** adalah sistem informasi berbasis Python untuk mengelola proses produksi dan manajemen produk pada sebuah toko roti. Sistem ini memungkinkan pengguna untuk:
 
@@ -28,7 +28,7 @@ Proyek ini dibangun dengan menerapkan konsep-konsep inti **Pemrograman Berorient
 
 ---
 
-## 👥 Anggota Kelompok & Pembagian Tugas
+## Anggota Kelompok & Pembagian Tugas
 
 | No | Nama | NIM | Tugas |
 |----|------|-----|-------|
@@ -40,7 +40,7 @@ Proyek ini dibangun dengan menerapkan konsep-konsep inti **Pemrograman Berorient
 
 ---
 
-## 🗂️ Struktur Direktori
+## Struktur Direktori
 
 ```
 UAS_PBO2026_KelasB_Kelompok6/
@@ -74,11 +74,11 @@ UAS_PBO2026_KelasB_Kelompok6/
 
 ---
 
-## 🖥️ Tampilan Menu Program
+## Tampilan Menu Program
 
 ```
 ==========================================================
-   🍞  HANARI BAKERY — SISTEM INFORMASI PRODUKSI
+       HANARI BAKERY — SISTEM INFORMASI PRODUKSI
 ==========================================================
 
   MENU UTAMA
@@ -93,7 +93,7 @@ UAS_PBO2026_KelasB_Kelompok6/
 
 ---
 
-## 🧱 Arsitektur Class
+## Arsitektur Class
 
 ### Abstract Superclass
 ```
@@ -137,7 +137,7 @@ IToppable     → beri_topping()
 
 ---
 
-## 📊 Daftar Produk
+## Daftar Produk
 
 | Kode | Nama Produk | Per Resep | Biaya Produksi | Harga Jual/pcs |
 |------|-------------|-----------|---------------|----------------|
@@ -150,7 +150,7 @@ IToppable     → beri_topping()
 
 ---
 
-## ✅ Penerapan Prinsip SOLID
+## Penerapan Prinsip SOLID
 
 | Prinsip | Penerapan dalam Proyek |
 |---------|----------------------|
