@@ -1,4 +1,3 @@
-"""
 produk_roti.py
 ==============
 Abstract superclass untuk semua produk roti di Hanari Bakery.
@@ -8,7 +7,6 @@ Konsep OOP       : Abstract Class, Encapsulation, Method Umum
 """
 
 from abc import ABC, abstractmethod
-
 
 class ProdukRoti(ABC):
     """
