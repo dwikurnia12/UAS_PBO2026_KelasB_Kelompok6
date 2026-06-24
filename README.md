@@ -32,7 +32,7 @@ Proyek ini dibangun dengan menerapkan konsep-konsep inti **Pemrograman Berorient
 
 | No | Nama | NIM | Tugas |
 |----|------|-----|-------|
-| 1 | Febriana Putri Qurrota'ayun | K3525007 | Interface (IBakeable, IPackageable, ILabelable, IDevelopable, IToppable, dll.) + Diagram Kelas UML |
+| 1 | Febriana Putri Qurrota'ayun | K3525007 | Interface (pelabelan, pemanggangan, pengemasan, pengembangan, pengukusan, perebusan, topping) + Diagram Kelas UML |
 | 2 | Queennera Martha Kusuma Wardhani | K3525012 | `ProdukRoti` (Abstract Superclass) + Encapsulation + Method umum (`hitung_profit()`, `tampilkan_info()`) + README |
 | 3 | Arofa Karindra Bimantara | K3525051 | `RotiManis`, `Croissant`, `ButterCookies` + Testing ketiga class tersebut |
 | 4 | Diah Anggraeni | K3525055 | `Muffin`, `Klepon`, `KueSoes` + Testing ketiga class tersebut |
