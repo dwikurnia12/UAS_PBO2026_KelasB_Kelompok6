@@ -1,9 +1,9 @@
-# UAS-Kelompok6B
+# UAS-Kelompok6
 Project UAS PBO
 # Hanari Bakery — Sistem Informasi Produksi dan Manajemen Produk
 
 > Proyek Akhir Pemrograman Berorientasi Objek (PBO)  
-> Program Studi Pendidikan Informatika dan komputer — FKIP UNS  
+> Program Studi Pendidikan Teknik Informatika dan komputer — FKIP UNS  
 > Tahun Akademik 2025/2026
 
 ---
