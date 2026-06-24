@@ -21,8 +21,8 @@ Proyek ini dibangun dengan menerapkan konsep-konsep inti **Pemrograman Berorient
 | Konsep | Penerapan |
 |--------|-----------|
 | **Abstract Class** | `ProdukRoti` sebagai superclass abstrak |
-| **Inheritance** | `RotiManis`, `Croissant`, `KueKering` → `ProdukRoti` |
-| **Interface** | `IBakeable`, `IPackageable`, `ILabelable`, `IDevelopable`, `IToppable` |
+| **Inheritance** | `RotiManis`, `Croissant`, `KueKering`,  `KueBasah` → `ProdukRoti` |
+| **Interface** | `pelabelan, pemanggangan, pengemasan, pengembangan, pengukusan, perebusan, topping` |
 | **Encapsulation** | Atribut private pada `ProdukRoti` dengan property getter |
 | **Polymorphism** | Setiap subclass mengimplementasikan `aduk()` dan proses produksi secara berbeda |
 
