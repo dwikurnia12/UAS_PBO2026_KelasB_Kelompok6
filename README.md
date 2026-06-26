@@ -85,6 +85,7 @@ UAS_PBO2026_KelasB_Kelompok6/
   2. Tampilkan Semua Produk
   3. Kalkulator Estimasi Profit
   4. Simulasi Proses Produksi
+  5. Hapus Produk
   0. Keluar
   ----------------------------------------
 ```

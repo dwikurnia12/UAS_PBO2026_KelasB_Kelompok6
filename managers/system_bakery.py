@@ -1,3 +1,12 @@
+"""
+Pusat pengelolaan seluruh produk dan proses bisnis
+di Hanari Bakery.
+
+Tanggung jawab   : Dwi Kurniawati Hanifah (K3525056)
+Konsep OOP       : Encapsulation, Object Management, Composition, Single Responsibility Principle (SRP)
+
+"""
+
 from data.data_product import DATA_PRODUK
 
 class SistemBakery:
@@ -203,11 +212,11 @@ class SistemBakery:
         )
 
         print(
-            f"Biaya Produksi   : Rp {hasil_profit ['biaya']:,.0f}"
+            f"Biaya Produksi   : Rp {hasil_profit ['total_biaya']:,.0f}"
         )
 
         print(
-            f"Pendapatan    : Rp {hasil_profit ['pendapatan']:,.0f}"
+            f"Pendapatan    : Rp {hasil_profit ['total_pendapatan']:,.0f}"
         )
 
         print(
