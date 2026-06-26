@@ -61,7 +61,7 @@ from models.roti_basah.klepon import Klepon
 from models.roti_basah.kue_soes import KueSoes
 from models.roti_kering.muffin import Muffin
 
-def jalankan_pengujian_diah():
+def jalankan_pengujian():
     print("======================================================================")
     print("      UJI COBA PROGRAM MANDIRI KELOMPOK 6 - BAGIAN DIAH     ")
     print("======================================================================")
@@ -111,4 +111,4 @@ if __name__ == '__main__':
     # Membuat folder penampung palsu agar script test_program.py bisa dieksekusi mandiri tanpa error path
     os.makedirs("models/roti_basah", exist_ok=True)
     os.makedirs("models/roti_kering", exist_ok=True)
-    jalankan_pengujian_diah()
+    jalankan_pengujian()
