@@ -1,5 +1,3 @@
-# UAS-Kelompok6
-Project UAS PBO
 # Hanari Bakery — Sistem Informasi Produksi dan Manajemen Produk
 
 > Proyek Akhir Pemrograman Berorientasi Objek (PBO)  
