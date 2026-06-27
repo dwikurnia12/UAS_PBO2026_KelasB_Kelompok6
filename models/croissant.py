@@ -2,17 +2,23 @@ from models.produk_roti import ProdukRoti
 from interfaces import Pengembangan, Pemanggangan, Pengemasan, Pelabelan
 
 class Croissant(ProdukRoti, Pengembangan, Pemanggangan, Pengemasan, Pelabelan):
-    def __init__(self, nama_produk: str, harga_beli: float, harga_jual: float):
-        bahan = [
-            "600 gram Tepung terigu protein tinggi",
-            "10 gram Ragi",
-            "60 gram Margarin",
-            "Sejumput Garam",
-            "-+ 300ml Air dingin",
-            "1 sdm Gula pasir",
-            "250 gram Korsvet"
-        ]
-        super().__init__(nama_produk, harga_beli, harga_jual, bahan)
+    def __init__(self):
+        super().__init__(
+            nama_produk="Croissant",
+            kode_produk="CR001",
+            bahan_baku={
+                "Tepung Terigu Protein Tinggi": (600, "gram"),
+                "Ragi": (10, "gram"),
+                "Margarin": (60, "gram"),
+                "Garam": (1, "sejumput"),
+                "Air Dingin": (300, "ml"),
+                "Gula Pasir": (1, "sdm"),
+                "Korsvet": (250, "gram")
+            },
+            jumlah_produksi=15,
+            biaya_produksi=95000,
+            harga_jual_per_pcs=15000
+        )
         self.__langkah_simulasi = []
         self.__kemasan = "Belum dikemas"
         self.__label = "Belum diberi label"
@@ -25,9 +31,11 @@ class Croissant(ProdukRoti, Pengembangan, Pemanggangan, Pengemasan, Pelabelan):
 
     def kemas(self, jenis_kemasan: str) -> None:
         self.__kemasan = jenis_kemasan
+        self.__langkah_simulasi.append(f"- Mengemas produk menggunakan {jenis_kemasan}.")
 
     def beri_label(self, teks_label: str) -> None:
         self.__label = teks_label
+        self.__langkah_simulasi.append(f"- Melabeli produk dengan teks: '{teks_label}'.")
 
     def simulasi_produksi(self) -> None:
         self.__langkah_simulasi.clear()
@@ -41,7 +49,10 @@ class Croissant(ProdukRoti, Pengembangan, Pemanggangan, Pengemasan, Pelabelan):
     def tampilkan_info(self) -> None:
         super().tampilkan_info()
         print("\n--- Langkah/Simulasi Produksi ---")
-        for langkah in self.__langkah_simulasi:
-            print(langkah)
+        if not self.__langkah_simulasi:
+            print("(Belum ada simulasi produksi yang dijalankan)")
+        else:
+            for langkah in self.__langkah_simulasi:
+                print(langkah)
         print(f"Kemasan      : {self.__kemasan}")
         print(f"Label Produk : {self.__label}")
