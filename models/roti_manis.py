@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 from models.produk_roti import ProdukRoti
 from interfaces import Pengembangan, Pemanggangan, Topping, Pengemasan, Pelabelan
 
@@ -62,3 +63,4 @@ class RotiManis(ProdukRoti, Pengembangan, Pemanggangan, Topping, Pengemasan, Pel
         print(f"Topping      : {self.__topping}")
         print(f"Kemasan      : {self.__kemasan}")
         print(f"Label Produk : {self.__label}")
+=======
