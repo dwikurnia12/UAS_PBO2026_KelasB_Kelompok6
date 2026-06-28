@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 """
 Subclass Roti Manis untuk produk Hanari Bakery.
 
@@ -71,3 +72,5 @@ class RotiManis(ProdukRoti, Pengadonan, Pengembangan, Pemanggangan, Topping, Pen
         print(f"Topping      : {self.__topping}")
         print(f"Kemasan      : {self.__pengemasan}")
         print(f"Label Produk : {self.__pelabelan}")
+=======
+>>>>>>> Stashed changes
