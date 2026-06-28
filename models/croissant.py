@@ -19,40 +19,16 @@ class Croissant(ProdukRoti, Pengembangan, Pemanggangan, Pengemasan, Pelabelan):
             biaya_produksi=95000,
             harga_jual_per_pcs=15000
         )
-        self.__langkah_simulasi = []
-        self.__kemasan = "Belum dikemas"
-        self.__label = "Belum diberi label"
 
-    def kembangkan(self, durasi: int) -> None:
-        self.__langkah_simulasi.append(f"- Melakukan fermentasi adonan selama {durasi} menit.")
-
-    def panggang(self, suhu: int, durasi: int) -> None:
-        self.__langkah_simulasi.append(f"- Baking adonan croissant di oven dengan suhu {suhu}°C selama {durasi} menit.")
-
-    def kemas(self, jenis_kemasan: str) -> None:
-        self.__kemasan = jenis_kemasan
-        self.__langkah_simulasi.append(f"- Mengemas produk menggunakan {jenis_kemasan}.")
-
-    def beri_label(self, teks_label: str) -> None:
-        self.__label = teks_label
-        self.__langkah_simulasi.append(f"- Melabeli produk dengan teks: '{teks_label}'.")
+    def aduk(self) -> None:
+        pass
 
     def simulasi_produksi(self) -> None:
-        self.__langkah_simulasi.clear()
-        self.__langkah_simulasi.append("1. Masukkan tepung, margarin, ragi, dan garam, aduk jadi satu di kom adonan.")
-        self.__langkah_simulasi.append("2. Campur air es dan gula pasir hingga larut, masukkan ke kom adonan, uleni hingga setengah kalis.")
-        self.__langkah_simulasi.append("3. Kempiskan adonan, tipiskan, beri korsvet di tengah, lipat adonan -+ 4 kali hingga bentuk persegi panjang.")
-        self.__langkah_simulasi.append("4. Lakukan pemotongan bentuk segitiga lalu gulung membentuk adonan croissant.")
+        self.aduk()
         self.kembangkan(45)
         self.panggang(200, 18)
+        self.kemas("Paper Bag Craft")
+        self.beri_label("Premium Pastry Series")
 
     def tampilkan_info(self) -> None:
-        super().tampilkan_info()
-        print("\n--- Langkah/Simulasi Produksi ---")
-        if not self.__langkah_simulasi:
-            print("(Belum ada simulasi produksi yang dijalankan)")
-        else:
-            for langkah in self.__langkah_simulasi:
-                print(langkah)
-        print(f"Kemasan      : {self.__kemasan}")
-        print(f"Label Produk : {self.__label}")
+        print(super().tampilkan_info())
