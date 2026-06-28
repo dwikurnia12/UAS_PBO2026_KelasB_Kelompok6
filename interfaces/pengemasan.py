@@ -2,7 +2,10 @@
 =========================================================
 PENGEMASAN PRODUK BAKERY
 =========================================================
-Berisi seluruh proses pengemasan setiap produk bakery.
+Interface proses pengemasan seluruh produk Hanari Bakery.
+
+Tanggung jawab : Febriana Putri (K3525007)
+Konsep OOP     : Interface, Single Responsibility Principle (SRP)
 """
 
 class Pengemasan:
@@ -50,9 +53,9 @@ class Pengemasan:
         )
 
     @staticmethod
-    def soes():
+    def kue_soes():
         return (
-            "[PENGEMASAN - Soes]\n"
+            "[PENGEMASAN - Kue Soes]\n"
             "  1. Susun soes dalam box/mika makanan.\n"
             "  2. Simpan rapi agar isian tidak keluar."
         )

@@ -2,7 +2,10 @@
 =========================================================
 PELABELAN PRODUK BAKERY
 =========================================================
-Berisi seluruh proses pelabelan setiap produk bakery.
+Interface proses pelabelan produk Hanari Bakery.
+
+Tanggung jawab : Febriana Putri (K3525007)
+Konsep OOP     : Interface, Single Responsibility Principle (SRP)
 """
 
 class Pelabelan:
@@ -48,9 +51,9 @@ class Pelabelan:
         )
 
     @staticmethod
-    def soes():
+    def kue_soes():
         return (
-            "[PELABELAN - Soes]\n"
+            "[PELABELAN - kuee Soes]\n"
             "  Label: nama produk, tanggal produksi, "
             "kedaluwarsa 2 hari, kode KB-002."
         )

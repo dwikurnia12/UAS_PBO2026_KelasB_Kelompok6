@@ -2,7 +2,10 @@
 =========================================================
 PENGADONAN PRODUK BAKERY
 =========================================================
-Berisi seluruh proses pengadonan setiap produk bakery.
+Interface proses pengadonan seluruh produk Hanari Bakery.
+
+Tanggung jawab : Febriana Putri (K3525007)
+Konsep OOP     : Interface, Single Responsibility Principle (SRP)
 """
 
 class Pengadonan:
@@ -57,9 +60,9 @@ class Pengadonan:
         )
 
     @staticmethod
-    def soes():
+    def kue_soes():
         return (
-            "[PENGADONAN - Soes]\n"
+            "[PENGADONAN - Kue Soes]\n"
             "  1. Rebus air, margarin, garam, dan gula hingga mendidih.\n"
             "  2. Masukkan tepung sekaligus, aduk cepat hingga kalis.\n"
             "  3. Dinginkan sebentar, lalu masukkan telur satu per satu.\n"

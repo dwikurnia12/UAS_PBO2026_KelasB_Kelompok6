@@ -2,8 +2,9 @@
 =========================================================
 TOPPING / ISIAN PRODUK BAKERY
 =========================================================
-Berisi seluruh proses pemberian topping atau isian
-setiap produk bakery.
+
+Tanggung jawab : Febriana Putri (K3525007)
+
 """
 
 class Topping:
@@ -33,9 +34,9 @@ class Topping:
         )
 
     @staticmethod
-    def soes():
+    def kue_soes():
         return (
-            "[TOPPING / ISI - Soes]\n"
+            "[ISIAN - Kue Soes]\n"
             "  1. Belah atau lubangi kulit soes.\n"
             "  2. Isi dengan vla vanilla / coklat menggunakan piping bag.\n"
             "  3. Bisa ditambah taburan gula halus di atasnya."

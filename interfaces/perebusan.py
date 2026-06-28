@@ -2,7 +2,10 @@
 =========================================================
 PEREBUSAN PRODUK BAKERY
 =========================================================
-Berisi seluruh proses perebusan setiap produk bakery.
+Interface proses perebusan pada produk Hanari Bakery.
+
+Tanggung jawab : Febriana Putri (K3525007)
+Konsep OOP     : Interface, Single Responsibility Principle (SRP)
 """
 
 class Perebusan:

@@ -1,4 +1,5 @@
-#produk_roti.py
+"""
+produk_roti.py
 ==============
 Abstract superclass untuk semua produk roti di Hanari Bakery.
 
@@ -115,7 +116,7 @@ class ProdukRoti(ABC):
         """
         biaya_per_pcs     = self.__biaya_produksi / self.__jumlah_produksi
         total_biaya       = biaya_per_pcs * jumlah_pcs
-        total_pendapatan  = self.__harga_jual * jumlah_pcs
+        total_pendapatan  = self.__harga_jual_per_pcs * jumlah_pcs
         profit            = total_pendapatan - total_biaya
         margin_persen     = (profit / total_pendapatan * 100) if total_pendapatan > 0 else 0
 
@@ -124,7 +125,7 @@ class ProdukRoti(ABC):
             "jumlah_pcs"        : jumlah_pcs,
             "biaya_per_pcs"     : biaya_per_pcs,
             "total_biaya"       : total_biaya,
-            "harga_jual         ": self.__harga_jual,
+            "harga_jual_per_pcs"        : self.__harga_jual_per_pcs,
             "total_pendapatan"  : total_pendapatan,
             "profit"            : profit,
             "margin_persen"     : margin_persen,
@@ -149,8 +150,8 @@ class ProdukRoti(ABC):
             f"  Kode        : {self.__kode_produk}\n"
             f"  Nama        : {self.__nama_produk}\n"
             f"  Per resep   : {self.__jumlah_produksi} pcs\n"
-            f"  Biaya produk  : Rp {self.__biaya_produksi:,.0f}\n"
-            f"  Harga jual  : Rp {self.__harga_jual:,.0f}/pcs\n"
+            f"  Biaya produksi  : Rp {self.__biaya_produksi:,.0f}\n"
+            f"  Harga jual  : Rp {self.__harga_jual_per_pcs:,.0f}/pcs\n"
             f"  Bahan baku  :\n{bahan_str}"
         )
 
@@ -164,5 +165,12 @@ class ProdukRoti(ABC):
         Proses pengadonan.
         Setiap produk memiliki teknik pengadonan yang berbeda,
         sehingga method ini bersifat abstrak.
+        """
+        pass
+    
+    @abstractmethod
+    def simulasi_produksi(self):
+        """
+        Menjalankan simulasi proses produksi produk.
         """
         pass

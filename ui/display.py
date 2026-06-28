@@ -27,7 +27,7 @@ class Display:
         print(f"\n[SUKSES] {pesan}")
 
     @staticmethod
-    def erroe(pesan):
+    def error(pesan):
         print(f"\n[ERROR] {pesan}")
     
     @staticmethod

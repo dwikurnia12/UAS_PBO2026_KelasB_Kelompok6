@@ -2,7 +2,10 @@
 =========================================================
 PENGEMBANGAN PRODUK BAKERY
 =========================================================
-Berisi seluruh proses pengembangan adonan setiap produk bakery.
+Interface proses pengembangan adonan pada produk Hanari Bakery.
+
+Tanggung jawab : Febriana Putri (K3525007)
+Konsep OOP     : Interface, Single Responsibility Principle (SRP)
 """
 
 class Pengembangan:
