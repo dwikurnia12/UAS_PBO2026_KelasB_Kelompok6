@@ -1,7 +1,7 @@
 from models.produk_roti import ProdukRoti
-from interfaces import Pengembangan, Pemanggangan, Pengemasan, Pelabelan
+from interfaces import Pengadonan, Pengembangan, Pemanggangan, Pengemasan, Pelabelan
 
-class Croissant(ProdukRoti, Pengembangan, Pemanggangan, Pengemasan, Pelabelan):
+class Croissant(ProdukRoti, Pengadonan, Pengembangan, Pemanggangan, Pengemasan, Pelabelan):
     def __init__(self):
         super().__init__(
             nama_produk="Croissant",
@@ -20,15 +20,45 @@ class Croissant(ProdukRoti, Pengembangan, Pemanggangan, Pengemasan, Pelabelan):
             harga_jual_per_pcs=15000
         )
 
-    def aduk(self) -> None:
-        pass
+        self.__langkah_simulasi = []
+        self.__pengemasan = "Belum dikemas"
+        self.__pelabelan = "Belum diberi label"
+
+    def pengadonan(self) -> None:
+        self.__langkah_simulasi.append(Pengadonan.croissant())
+
+    def pengembangan(self, durasi: int) -> None:
+        self.__langkah_simulasi.append(Pengembangan.croissant())
+    
+    def pemanggangan(self, suhu: int, durasi: int) -> None:
+        self.__langkah_simulasi.append(Pemanggangan.croissant())
+        
+    def pengemasan(self, jenis_kemasan: str) -> None:
+        self.__langkah_simulasi.append(Pengemasan.croissant())
+
+    def pelabelan(self, teks_label: str) -> None:
+        self.__langkah_simulasi.append(Pelabelan.croissant())
+           
 
     def simulasi_produksi(self) -> None:
-        self.aduk()
-        self.kembangkan(45)
-        self.panggang(200, 18)
-        self.kemas("Paper Bag Craft")
-        self.beri_label("Premium Pastry Series")
+        self.__langkah_simulasi.clear()
+
+        self.pengadonan()
+        self.pengembangan(45)
+        self.pemanggangan(200, 18)
+        self.pengemasan("Paper Bag Craft")
+        self.pelabelan("CR001-Kelompok6B")
 
     def tampilkan_info(self) -> None:
         print(super().tampilkan_info())
+
+        print("\n--- Langkah Produksi ---")
+
+        if not self.__langkah_simulasi:
+            print("(Belum ada simulasi)")
+        else:
+            for langkah in self.__langkah_simulasi:
+                print(langkah)
+
+        print(f"Kemasan      : {self.__pengemasan}")
+        print(f"Label Produk : {self.__pelabelan}")
