@@ -1,35 +1,62 @@
-# models/roti_basah/klepon.py
 """
-Subclass Klepon untuk kategori Kue Basah di Hanari Bakery.
-
+klepon.py
+=========
+Class Klepon
 Tanggung Jawab : Diah
-Konsep OOP     : Inheritance, Polymorphism (Override Method Abstrak)
 """
 
 from models.produk_roti import ProdukRoti
 
+from interfaces.pengadonan import Pengadonan
+from interfaces.perebusan import Perebusan
+from interfaces.topping import Topping
+from interfaces.pengemasan import Pengemasan
+from interfaces.pelabelan import Pelabelan
+
+
 class Klepon(ProdukRoti):
-    """
-    Subclass yang merepresentasikan kue basah Klepon.
-    Menggunakan metode perebusan dan pelumuran kelapa parut.
-    """
 
-    def aduk(self) -> str:
-        """Implementasi proses pengadonan abstrak untuk Klepon."""
-        return f"[{self.nama_produk}] Mengaduk tepung ketan dengan air pandan hangat hingga kalis dan mudah dibentuk bulat dengan isian gula merah."
+    def __init__(self):
+        bahan = {
+            "Tepung Ketan": (250, "gram"),
+            "Air Hangat": (180, "ml"),
+            "Pasta Pandan": (1, "sdt"),
+            "Gula Merah": (100, "gram"),
+            "Kelapa Parut": (150, "gram")
+        }
 
-    def rebus(self) -> str:
-        """Proses pematangan dengan direbus (Ayun Interface)."""
-        return f"[{self.nama_produk}] Merebus adonan bulat di air mendidih sampai mengapung sebagai tanda matang."
+        super().__init__(
+            nama_produk="Klepon",
+            kode_produk="KB-001",
+            bahan_baku=bahan,
+            jumlah_produksi=20,
+            biaya_produksi=40000,
+            harga_jual_per_pcs=6000
+        )
 
-    def topping(self) -> str:
-        """Proses pemberian topping kelapa parut (Ayun Interface)."""
-        return f"[{self.nama_produk}] Menggulingkan klepon matang di atas parutan kelapa muda yang telah dikukus dengan garam."
+    # Method abstrak dari ProdukRoti
+    def aduk(self):
+        return Pengadonan.klepon()
 
-    def kemas(self) -> str:
-        """Proses pengemasan kue basah (Ayun Interface)."""
-        return f"[{self.nama_produk}] Menata beberapa butir klepon di atas mika kecil transparan beralas daun pisang."
+    # Simulasi produksi
+    def simulasi_produksi(self):
+        print("=" * 50)
+        print("SIMULASI PRODUKSI KLEPON")
+        print("=" * 50)
 
-    def label(self) -> str:
-        """Proses pelabelan (Ayun Interface)."""
-        return f"[{self.nama_produk}] Menempelkan sticker logo Hanari Bakery pada segel kemasan mika."
+        print(self.aduk())
+        print()
+
+        print(Perebusan.klepon())
+        print()
+
+        print(Topping.klepon())
+        print()
+
+        print(Pengemasan.klepon())
+        print()
+
+        print(Pelabelan.klepon())
+        print()
+
+        print("Produksi Klepon selesai.")
