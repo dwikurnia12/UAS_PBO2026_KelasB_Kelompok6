@@ -77,26 +77,13 @@ class SistemBakery:
         for produk in self._daftar_produk.values():
 
             print("\n-------------------")
+            (produk.tampilkan_info())
 
             print(
-                f"Kode Produk : "
-                f"{produk.kode_produk}"
+            f"Harga Jual : "
+            f"Rp {produk.harga_jual_per_pcs:,}"
             )
-
-            print(
-                f"Nama Produk : {produk.nama_produk}"   
-            )
-
-            print(
-                f"Harga Jual : "
-                f"Rp {produk.harga_jual:,}"
-            )
-
-            print(
-                f"Biaya Produksi :"
-                f"Rp {produk.biaya_produksi:,}"
-            )
-
+        
             print("--------------------")
 
     # ==========================================
@@ -170,7 +157,6 @@ class SistemBakery:
 
     # ==============================
     # TAMPILKAN PROFIT LENGKAP
-    # ==============================
 
     def tampilkan_profit(
             self,
@@ -190,6 +176,10 @@ class SistemBakery:
         hasil_profit = self.hitung_profit(
             kode_produk,
             jumlah_produksi
+        )
+        print(
+            f"Margin Profit : "
+            f"{hasil_profit['margin_persen']:.2f}%"
         )
 
         kebutuhan_bahan = (
@@ -212,11 +202,11 @@ class SistemBakery:
         )
 
         print(
-            f"Biaya Produksi   : Rp {hasil_profit ['total_biaya']:,.0f}"
+            f"Biaya Produksi   : Rp {hasil_profit['total_biaya']:,.0f}"
         )
 
         print(
-            f"Pendapatan    : Rp {hasil_profit ['total_pendapatan']:,.0f}"
+            f"Pendapatan    : Rp {hasil_profit['total_pendapatan']:,.0f}"
         )
 
         print(
@@ -263,7 +253,7 @@ class SistemBakery:
         )
         print("=" * 50)
         produk.simulasi_produksi()
-
+        produk.tampilkan_info()
     # ==============================
     # HAPUS PRODUK
     # ==============================

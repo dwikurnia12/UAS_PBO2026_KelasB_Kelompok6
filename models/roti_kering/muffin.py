@@ -6,16 +6,10 @@ Tanggung Jawab : Diah
 """
 
 from models.produk_roti import ProdukRoti
-
-from interfaces.pengadonan import Pengadonan
-from interfaces.pengembangan import Pengembangan
-from interfaces.pemanggangan import Pemanggangan
-from interfaces.topping import Topping
-from interfaces.pengemasan import Pengemasan
-from interfaces.pelabelan import Pelabelan
+from interfaces import Pengadonan, Pengembangan, Pemanggangan, Pengemasan, Pelabelan, Topping
 
 
-class Muffin(ProdukRoti):
+class Muffin(ProdukRoti, Pengadonan, Pengembangan, Pemanggangan, Pengemasan, Pelabelan, Topping):
 
     def __init__(self):
         bahan = {
@@ -30,39 +24,54 @@ class Muffin(ProdukRoti):
 
         super().__init__(
             nama_produk="Muffin",
-            kode_produk="MF-001",
+            kode_produk="MF001",
             bahan_baku=bahan,
             jumlah_produksi=12,
             biaya_produksi=50000,
             harga_jual_per_pcs=10000
         )
+        self.__langkah_simulasi = []
+        self.__pengemasan = "Belum dikemas"
+        self.__pelabelan = "Belum diberi label"
 
     # Method abstrak dari ProdukRoti
-    def aduk(self):
-        return Pengadonan.muffin()
+    def pengadonan(self):
+        self.__langkah_simulasi.append(Pengadonan.muffin())
+
+    def pengemasan(self, jenis_kemasan):
+        self.__pengemasan = jenis_kemasan
+        self.__langkah_simulasi.append(
+            f"- Mengemas produk menggunakan {jenis_kemasan}."
+        )
+
+    def pelabelan(self, teks_label):
+        self.__pelabelan = teks_label
+        self.__langkah_simulasi.append(
+            f"- Melabeli produk dengan teks: '{teks_label}'."
+        )
 
     # Simulasi produksi
     def simulasi_produksi(self):
-        print("=" * 50)
-        print("SIMULASI PRODUKSI MUFFIN")
-        print("=" * 50)
+        self.__langkah_simulasi.clear()
 
-        print(self.aduk())
-        print()
+        self.pengadonan()
+        self.__langkah_simulasi.append(Pengembangan.muffin())
+        self.__langkah_simulasi.append(Topping.muffin())
+        self.__langkah_simulasi.append(Pemanggangan.muffin())
 
-        print(Pengembangan.muffin())
-        print()
+        self.pengemasan("Paper Cup + Mika")
+        self.pelabelan("MF001-Kelompok6B")
 
-        print(Topping.muffin())
-        print()
+    def tampilkan_info(self):
+        print(super().tampilkan_info())
 
-        print(Pemanggangan.muffin())
-        print()
+        print("\n--- Langkah Simulasi Produksi ---")
 
-        print(Pengemasan.muffin())
-        print()
+        if not self.__langkah_simulasi:
+            print("(Belum ada simulasi produksi)")
+        else:
+            for langkah in self.__langkah_simulasi:
+                print(langkah)
 
-        print(Pelabelan.muffin())
-        print()
-
-        print("Produksi Muffin selesai.")
+        print(f"Kemasan      : {self.__pengemasan}")
+        print(f"Label Produk : {self.__pelabelan}")

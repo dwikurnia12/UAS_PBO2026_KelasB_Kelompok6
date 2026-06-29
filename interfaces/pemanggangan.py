@@ -47,7 +47,7 @@ class Pemanggangan:
     @staticmethod
     def kue_soes():
         return (
-            "[PEMANGGANGAN - Soes]\n"
+            "[PEMANGGANGAN - Kue Soes]\n"
             "  1. Panaskan oven 200°C.\n"
             "  2. Semprot adonan ke loyang.\n"
             "  3. Panggang 25-30 menit hingga mengembang dan kering.\n"

@@ -53,7 +53,7 @@ class Pelabelan:
     @staticmethod
     def kue_soes():
         return (
-            "[PELABELAN - kuee Soes]\n"
+            "[PELABELAN - Kue Soes]\n"
             "  Label: nama produk, tanggal produksi, "
             "kedaluwarsa 2 hari, kode KB-002."
         )
