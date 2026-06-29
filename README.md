@@ -108,30 +108,31 @@ ProdukRoti  (abstract)
 │   ├── hitung_profit(jumlah_pcs) → dict
 │   └── tampilkan_info() → str
 └── Method abstrak
-    └── aduk() → str
+    └── pengadonan() → str
+    └──simulasi_produksi()
 ```
 
 ### Hierarki Inheritance
 ```
 ProdukRoti (abstract)
-├── RotiManis     + IPengembangan
-├── Croissant     + IPengembangan
-└── KueKering (abstract)  + ITopping
+├── RotiManis     + Pengembangan
+├── Croissant     + Pengembangan
+└── KueKering (abstract)  + Topping
     ├── ButterCookies
-    ├── Muffin        + IPengembangan
-    ├── Klepon        + IPengembangan
+    ├── Muffin        + Pengembangan
+    ├── Klepon        + Pengembangan
     └── KueSoes
 ```
 
 ### Interfaces
 ```
-IPemanggangan   → pemanggangan()
-IPerebusan      → perebusan()
-IPengadonan     → pengadonan()
-IPengemasan     → pengemasan()
-IPelabelan      → pelabelan()
-IPengembangan   → pengembangan()
-ITopping        → topping()
+Pemanggangan   → pemanggangan()
+Perebusan      → perebusan()
+Pengadonan     → pengadonan()
+Pengemasan     → pengemasan()
+Pelabelan      → pelabelan()
+Pengembangan   → pengembangan()
+Topping        → topping()
 
 ```
 
@@ -143,12 +144,12 @@ ITopping        → topping()
 
 | Kode | Nama Produk | Per Resep | Biaya Produksi | Harga Jual/pcs |
 |------|-------------|-----------|---------------|----------------|
-| RM-001 | Roti Manis | 12 pcs | Rp 35.000 | Rp 5.000 |
-| CR-001 | Croissant | 10 pcs | Rp 75.000 | Rp 15.000 |
-| BC-001 | Butter Cookies | 30 pcs | Rp 45.000 | Rp 3.000 |
-| MF-001 | Muffin | 12 pcs | Rp 38.000 | Rp 8.000 |
-| KL-001 | Klepon | 20 pcs | Rp 25.000 | Rp 2.000 |
-| KS-001 | Kue Soes | 15 pcs | Rp 40.000 | Rp 6.000 |
+| RM001 | Roti Manis | 12 pcs | Rp 35.000 | Rp 5.000 |
+| CR001 | Croissant | 10 pcs | Rp 75.000 | Rp 15.000 |
+| BC001 | Butter Cookies | 30 pcs | Rp 45.000 | Rp 3.000 |
+| MF001 | Muffin | 12 pcs | Rp 38.000 | Rp 8.000 |
+| KB001 | Klepon | 20 pcs | Rp 25.000 | Rp 2.000 |
+| KB002 | Kue Soes | 15 pcs | Rp 40.000 | Rp 6.000 |
 
 ---
 
