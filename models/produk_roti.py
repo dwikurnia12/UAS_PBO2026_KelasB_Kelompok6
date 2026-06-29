@@ -125,7 +125,7 @@ class ProdukRoti(ABC):
             "jumlah_pcs"        : jumlah_pcs,
             "biaya_per_pcs"     : biaya_per_pcs,
             "total_biaya"       : total_biaya,
-            "harga_jual_per_pcs"        : self.__harga_jual_per_pcs,
+            "harga_jual_per_pcs": self.__harga_jual_per_pcs,
             "total_pendapatan"  : total_pendapatan,
             "profit"            : profit,
             "margin_persen"     : margin_persen,
@@ -147,12 +147,12 @@ class ProdukRoti(ABC):
             for bahan, (jumlah, satuan) in self.__bahan_baku.items()
         )
         return (
-            f"  Kode        : {self.__kode_produk}\n"
-            f"  Nama        : {self.__nama_produk}\n"
-            f"  Per resep   : {self.__jumlah_produksi} pcs\n"
-            f"  Biaya produksi  : Rp {self.__biaya_produksi:,.0f}\n"
-            f"  Harga jual  : Rp {self.__harga_jual_per_pcs:,.0f}/pcs\n"
-            f"  Bahan baku  :\n{bahan_str}"
+            f"  Kode                : {self.__kode_produk}\n"
+            f"  Nama                : {self.__nama_produk}\n"
+            f"  Per resep           : {self.__jumlah_produksi} pcs\n"
+            f"  Biaya produksi      : Rp {self.__biaya_produksi:,.0f}\n"
+            f"  Harga jual          : Rp {self.__harga_jual_per_pcs:,.0f}/pcs\n"
+            f"  Bahan baku          :\n{bahan_str}"
         )
 
     # ------------------------------------------------------------------
