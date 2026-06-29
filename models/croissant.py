@@ -1,3 +1,9 @@
+"""
+Subclass Croissant untuk produk Hanari Bakery.
+
+Tanggung Jawab : Arofa Karindra Bimantara (K3525051)
+Konsep OOP     : Inheritance, Polymorphism
+"""
 from models.produk_roti import ProdukRoti
 
 from interfaces.pengadonan import Pengadonan
@@ -20,8 +26,8 @@ class Croissant(ProdukRoti, Pengadonan, Pengembangan, Pemanggangan, Pengemasan, 
                 "Gula Pasir": (1, "sdm"),
                 "Korsvet": (250, "gram")
             },
-            jumlah_produksi=15,
-            biaya_produksi=95000,
+            jumlah_produksi=10,
+            biaya_produksi=75000,
             harga_jual_per_pcs=15000
         )
 
@@ -43,7 +49,6 @@ class Croissant(ProdukRoti, Pengadonan, Pengembangan, Pemanggangan, Pengemasan, 
 
     def pelabelan(self, teks_label: str) -> None:
         self.__langkah_simulasi.append(Pelabelan.croissant())
-           
 
     def simulasi_produksi(self) -> None:
         self.__langkah_simulasi.clear()

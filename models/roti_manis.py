@@ -27,9 +27,9 @@ class RotiManis(ProdukRoti, Pengadonan, Pengembangan, Pemanggangan, Topping, Pen
                 "Susu Cair": (250, "ml"),
                 "Margarin": (60, "gram")
             },
-            jumlah_produksi=20,
-            biaya_produksi=85000,
-            harga_jual_per_pcs=8000
+            jumlah_produksi=12,
+            biaya_produksi=35000,
+            harga_jual_per_pcs=5000
         )
 
         self.__langkah_simulasi = []
@@ -37,28 +37,30 @@ class RotiManis(ProdukRoti, Pengadonan, Pengembangan, Pemanggangan, Topping, Pen
         self.__pengemasan = "Belum dikemas"
         self.__pelabelan = "Belum diberi label"
 
-    def pengadonan(self):
+    def pengadonan(self) -> None:
         self.__langkah_simulasi.append(Pengadonan.roti_manis())
 
     def pengembangan(self, durasi: int) -> None:
-        self.__langkah_simulasi.append(f"- Mengembangkan adonan (proofing) selama {durasi} menit.")
+        self.__langkah_simulasi.append(Pengembangan.roti_manis())
 
     def pemanggangan(self, suhu: int, durasi: int) -> None:
-        self.__langkah_simulasi.append(f"- Oven adonan dengan suhu {suhu}°C selama {durasi} menit.")
+        self.__langkah_simulasi.append(Pemanggangan.roti_manis())
 
     def topping(self, jenis_topping: str) -> None:
         self.__topping = jenis_topping
-        self.__langkah_simulasi.append(f"- Memberikan topping: {jenis_topping}.")
+        self.__langkah_simulasi.append(Topping.roti_manis())
 
     def pengemasan(self, jenis_kemasan: str) -> None:
         self.__pengemasan = jenis_kemasan
-        self.__langkah_simulasi.append(f"- Mengemas produk menggunakan {jenis_kemasan}.")
+        self.__langkah_simulasi.append(Pengemasan.roti_manis())
 
     def pelabelan(self, teks_label: str) -> None:
         self.__pelabelan = teks_label
-        self.__langkah_simulasi.append(f"- Melabeli produk dengan teks: '{teks_label}'.")
+        self.__langkah_simulasi.append(Pelabelan.roti_manis())
 
     def simulasi_produksi(self) -> None:
+        self.__langkah_simulasi.clear()
+
         self.pengadonan()
         self.pengembangan(45)
         self.pemanggangan(180, 20)
@@ -68,12 +70,15 @@ class RotiManis(ProdukRoti, Pengadonan, Pengembangan, Pemanggangan, Topping, Pen
 
     def tampilkan_info(self) -> None:
         print(super().tampilkan_info())
-        print("\n--- Langkah/Simulasi Produksi ---")
+
+        print("\n--- Langkah Simulasi Produksi ---")
+
         if not self.__langkah_simulasi:
-            print("(Belum ada simulasi produksi yang dijalankan)")
+            print("(Belum ada simulasi)")
         else:
             for langkah in self.__langkah_simulasi:
                 print(langkah)
+
         print(f"Topping      : {self.__topping}")
         print(f"Kemasan      : {self.__pengemasan}")
         print(f"Label Produk : {self.__pelabelan}")

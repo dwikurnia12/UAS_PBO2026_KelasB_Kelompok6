@@ -1,3 +1,9 @@
+"""
+Subclass ButterCookies untuk produk Hanari Bakery.
+
+Tanggung Jawab : Arofa Karindra Bimantara (K3525051)
+Konsep OOP     : Inheritance, Polymorphism
+"""
 from models.produk_roti import ProdukRoti
 
 from interfaces.pengadonan import Pengadonan
@@ -19,39 +25,30 @@ class ButterCookies(ProdukRoti, Pengadonan, Pemanggangan, Pengemasan, Pelabelan)
                 "Susu Bubuk": (20, "gram")
             },
             jumlah_produksi=30,
-            biaya_produksi=55000,
-            harga_jual_per_pcs=2500
+            biaya_produksi=45000,
+            harga_jual_per_pcs=3000
         )
         self.__langkah_simulasi = []
         self.__pengemasan = "Belum dikemas"
         self.__pelabelan = "Belum diberi label"
 
-    def pengadonan(self):
-        self.__langkah_simulasi.append(
-            Pengadonan.butter_cookies()
-        )
-    def pemanggangan(self, suhu, durasi):
-        self.__langkah_simulasi.append(
-            f"- Memanggang butter cookies pada suhu {suhu}°C selama {durasi} menit."
-        )
-    def pengemasan(self, jenis_kemasan):
-        self.__pengemasan = jenis_kemasan
+    def pengadonan(self) -> None:
+        self.__langkah_simulasi.append(Pengadonan.butter_cookies())
 
-        self.__langkah_simulasi.append(
-            f"- Mengemas produk menggunakan {jenis_kemasan}."
-        )
-    def pelabelan(self, teks_label):
-        self.__pelabelan = teks_label
+    def pemanggangan(self, suhu: int, durasi: int) -> None:
+        self.__langkah_simulasi.append(Pemanggangan.butter_cookies())
+        
+    def pengemasan(self, jenis_kemasan: str) -> None:
+        self.__langkah_simulasi.append(Pengemasan.butter_cookies())
 
-        self.__langkah_simulasi.append(
-            f"- Melabeli produk dengan teks: '{teks_label}'."
-        )
+    def pelabelan(self, teks_label: str) -> None:
+        self.__langkah_simulasi.append(Pelabelan.butter_cookies())
 
     def simulasi_produksi(self) -> None:
         self.__langkah_simulasi.clear()
 
         self.pengadonan()
-        self.pemanggangan(150,25)
+        self.pemanggangan(150, 25)
         self.pengemasan("Toples Plastik 500 g")
         self.pelabelan("Butter Cookies Hanari Bakery")
     
@@ -61,7 +58,7 @@ class ButterCookies(ProdukRoti, Pengadonan, Pemanggangan, Pengemasan, Pelabelan)
         print("\n--- Langkah Simulasi Produksi ---")
 
         if not self.__langkah_simulasi:
-            print("(Belum ada simulasi produksi)")
+            print("(Belum ada simulasi)")
         else:
             for langkah in self.__langkah_simulasi:
                 print(langkah)
