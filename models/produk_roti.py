@@ -160,7 +160,7 @@ class ProdukRoti(ABC):
     # ------------------------------------------------------------------
 
     @abstractmethod
-    def aduk(self) -> str:
+    def pengadonan(self) -> str:
         """
         Proses pengadonan.
         Setiap produk memiliki teknik pengadonan berbeda,

@@ -13,7 +13,7 @@ from interfaces.topping import Topping
 from interfaces.pengemasan import Pengemasan
 from interfaces.pelabelan import Pelabelan
 
-class Klepon(ProdukRoti):
+class Klepon(ProdukRoti, Pengadonan, Perebusan, Topping, Pengemasan, Pelabelan):
 
     def __init__(self):
         bahan = {
@@ -52,7 +52,7 @@ class Klepon(ProdukRoti):
         self.__langkah_simulasi.append(
             f"- Mengemas produk menggunakan {jenis_kemasan}."
         )
-     def pelabelan(self, teks_label):
+    def pelabelan(self, teks_label):
         self.__pelabelan = teks_label
         self.__langkah_simulasi.append(
             f"- Melabeli produk dengan teks: '{teks_label}'."
@@ -63,22 +63,23 @@ class Klepon(ProdukRoti):
 
         self.__langkah_simulasi.clear()
 
-        self.pengadonan()
+        def pengadonan(self):
+            self.__langkah_simulasi.append(Pengadonan.klepon())
         self.perebusan()
         self.topping()
         self.pengemasan("Mika Transparan")
         self.pelabelan("KB001-Kelompok6B")
     
     def tampilkan_info(self) -> None:
-    print(super().tampilkan_info())
+        super().tampilkan_info()
 
-    print("\n--- Langkah Simulasi Produksi ---")
+        print("\n--- Langkah Simulasi Produksi ---")
 
-    if not self.__langkah_simulasi:
-        print("(Belum ada simulasi produksi)")
-    else:
-        for langkah in self.__langkah_simulasi:
-            print(langkah)
+        if not self.__langkah_simulasi:
+            print("(Belum ada simulasi produksi)")
+        else:
+            for langkah in self.__langkah_simulasi:
+                print(langkah)
 
-    print(f"Kemasan      : {self.__pengemasan}")
-    print(f"Label Produk : {self.__pelabelan}")
+        print(f"Kemasan      : {self.__pengemasan}")
+        print(f"Label Produk : {self.__pelabelan}")
