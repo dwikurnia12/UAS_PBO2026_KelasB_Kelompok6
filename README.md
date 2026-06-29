@@ -114,12 +114,12 @@ ProdukRoti  (abstract)
 ### Hierarki Inheritance
 ```
 ProdukRoti (abstract)
-├── RotiManis     + IDevelopable
-├── Croissant     + IDevelopable
-└── KueKering (abstract)  + IToppable
+├── RotiManis     + IPengembangan
+├── Croissant     + IPengembangan
+└── KueKering (abstract)  + ITopping
     ├── ButterCookies
-    ├── Muffin        + IDevelopable
-    ├── Klepon        + IDevelopable
+    ├── Muffin        + IPengembangan
+    ├── Klepon        + IPengembangan
     └── KueSoes
 ```
 
