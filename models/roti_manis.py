@@ -16,16 +16,16 @@ from interfaces.pelabelan import Pelabelan
 class RotiManis(ProdukRoti, Pengadonan, Pengembangan, Pemanggangan, Topping, Pengemasan, Pelabelan):
     def __init__(self):
         super().__init__(
-            nama_produk="Roti Manis",
-            kode_produk="RM001",
-            bahan_baku={
-                "Tepung Terigu": (500, "gram"),
-                "Gula Pasir": (100, "gram"),
-                "Ragi Instan": (12, "gram"),
-                "Garam": (5, "gram"),
-                "Kuning Telur": (2, "butir"),
-                "Susu Cair": (250, "ml"),
-                "Margarin": (60, "gram")
+            nama_produk ="Roti Manis",
+            kode_produk ="RM001",
+            bahan_baku  ={
+                "Tepung Terigu" : (500, "gram"),
+                "Gula Pasir"    : (100, "gram"),
+                "Ragi Instan"   : (12, "gram"),
+                "Garam"         : (5, "gram"),
+                "Kuning Telur"  : (2, "butir"),
+                "Susu Cair"     : (250, "ml"),
+                "Margarin"      : (60, "gram")
             },
             jumlah_produksi=12,
             biaya_produksi=35000,
@@ -33,9 +33,9 @@ class RotiManis(ProdukRoti, Pengadonan, Pengembangan, Pemanggangan, Topping, Pen
         )
 
         self.__langkah_simulasi = []
-        self.__topping = "Belum diberi topping"
-        self.__pengemasan = "Belum dikemas"
-        self.__pelabelan = "Belum diberi label"
+        self.__topping      = "Belum diberi topping"
+        self.__pengemasan   = "Belum dikemas"
+        self.__pelabelan    = "Belum diberi label"
 
     def pengadonan(self) -> None:
         self.__langkah_simulasi.append(Pengadonan.roti_manis())

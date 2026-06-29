@@ -14,23 +14,23 @@ from interfaces.pelabelan import Pelabelan
 class ButterCookies(ProdukRoti, Pengadonan, Pemanggangan, Pengemasan, Pelabelan):
     def __init__(self):
         super().__init__(
-            nama_produk="Butter Cookies",
-            kode_produk="BC001",
-            bahan_baku={
-                "Butter (Mentega)": (150, "gram"),
-                "Gula Halus": (70, "gram"),
-                "Ekstrak Vanila": (1, "sdt"),
-                "Kuning Telur": (1, "butir"),
-                "Tepung Terigu Protein Rendah": (200, "gram"),
-                "Susu Bubuk": (20, "gram")
+            nama_produk ="Butter Cookies",
+            kode_produk ="BC001",
+            bahan_baku  ={
+                "Butter (Mentega)"              : (150, "gram"),
+                "Gula Halus"                    : (70, "gram"),
+                "Ekstrak Vanila"                : (1, "sdt"),
+                "Kuning Telur"                  : (1, "butir"),
+                "Tepung Terigu Protein Rendah"  : (200, "gram"),
+                "Susu Bubuk"                    : (20, "gram")
             },
             jumlah_produksi=30,
             biaya_produksi=45000,
             harga_jual_per_pcs=3000
         )
         self.__langkah_simulasi = []
-        self.__pengemasan = "Belum dikemas"
-        self.__pelabelan = "Belum diberi label"
+        self.__pengemasan   = "Belum dikemas"
+        self.__pelabelan    = "Belum diberi label"
 
     def pengadonan(self) -> None:
         self.__langkah_simulasi.append(Pengadonan.butter_cookies())

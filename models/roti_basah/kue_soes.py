@@ -16,25 +16,25 @@ class KueSoes(ProdukRoti, Pengadonan, Pemanggangan, Topping, Pengemasan, Pelabel
 
     def __init__(self):
         bahan = {
-            "Tepung Terigu": (200, "gram"),
-            "Mentega": (100, "gram"),
-            "Air": (250, "ml"),
-            "Telur": (4, "butir"),
-            "Garam": (1, "sdt"),
-            "Vla Vanilla": (250, "gram")
+            "Tepung Terigu" : (200, "gram"),
+            "Mentega"       : (100, "gram"),
+            "Air"           : (250, "ml"),
+            "Telur"         : (4, "butir"),
+            "Garam"         : (1, "sdt"),
+            "Vla Vanilla"   : (250, "gram")
         }
         super().__init__(
-            nama_produk="Kue Soes",
-            kode_produk="KB002",
-            bahan_baku= bahan,
-            jumlah_produksi=20,
-            biaya_produksi=55000,
-            harga_jual_per_pcs=9000
+            nama_produk         ="Kue Soes",
+            kode_produk         ="KB002",
+            bahan_baku          = bahan,
+            jumlah_produksi     =20,
+            biaya_produksi      =55000,
+            harga_jual_per_pcs  =9000
         )
 
         self.__langkah_simulasi = []
-        self.__pengemasan = "Belum dikemas"
-        self.__pelabelan = "Belum diberi label"
+        self.__pengemasan   = "Belum dikemas"
+        self.__pelabelan    = "Belum diberi label"
 
 
     # Method abstrak dari ProdukRoti
@@ -51,8 +51,8 @@ class KueSoes(ProdukRoti, Pengadonan, Pemanggangan, Topping, Pengemasan, Pelabel
         self.__langkah_simulasi.append(Topping.soes())
         self.__langkah_simulasi.append(Pengemasan.kue_soes())
         self.__langkah_simulasi.append(Pelabelan.soes())
-        self.__pengemasan= "Box Pastry"
-        self.__pelabelan= "KB002-Kelompok 6B"
+        self.__pengemasan   = "Box Pastry"
+        self.__pelabelan    = "KB002-Kelompok 6B"
     
     def tampilkan_info(self) -> None:
         print(super().tampilkan_info())

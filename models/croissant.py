@@ -15,16 +15,16 @@ from interfaces.pelabelan import Pelabelan
 class Croissant(ProdukRoti, Pengadonan, Pengembangan, Pemanggangan, Pengemasan, Pelabelan):
     def __init__(self):
         super().__init__(
-            nama_produk="Croissant",
-            kode_produk="CR001",
-            bahan_baku={
-                "Tepung Terigu Protein Tinggi": (600, "gram"),
-                "Ragi": (10, "gram"),
-                "Margarin": (60, "gram"),
-                "Garam": (1, "sejumput"),
-                "Air Dingin": (300, "ml"),
-                "Gula Pasir": (1, "sdm"),
-                "Korsvet": (250, "gram")
+            nama_produk     ="Croissant",
+            kode_produk     ="CR001",
+            bahan_baku      ={
+                "Tepung Terigu Protein Tinggi"  : (600, "gram"),
+                "Ragi"                          : (10, "gram"),
+                "Margarin"                      : (60, "gram"),
+                "Garam"                         : (1, "sejumput"),
+                "Air Dingin"                    : (300, "ml"),
+                "Gula Pasir"                    : (1, "sdm"),
+                "Korsvet"                       : (250, "gram")
             },
             jumlah_produksi=10,
             biaya_produksi=75000,
@@ -32,8 +32,8 @@ class Croissant(ProdukRoti, Pengadonan, Pengembangan, Pemanggangan, Pengemasan, 
         )
 
         self.__langkah_simulasi = []
-        self.__pengemasan = "Belum dikemas"
-        self.__pelabelan = "Belum diberi label"
+        self.__pengemasan   = "Belum dikemas"
+        self.__pelabelan    = "Belum diberi label"
 
     def pengadonan(self) -> None:
         self.__langkah_simulasi.append(Pengadonan.croissant())

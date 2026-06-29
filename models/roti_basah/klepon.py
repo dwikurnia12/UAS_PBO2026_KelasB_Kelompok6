@@ -17,25 +17,25 @@ class Klepon(ProdukRoti, Pengadonan, Perebusan, Topping, Pengemasan, Pelabelan):
 
     def __init__(self):
         bahan = {
-            "Tepung Ketan": (250, "gram"),
-            "Air Hangat": (180, "ml"),
-            "Pasta Pandan": (1, "sdt"),
-            "Gula Merah": (100, "gram"),
-            "Kelapa Parut": (150, "gram")
+            "Tepung Ketan"  : (250, "gram"),
+            "Air Hangat"    : (180, "ml"),
+            "Pasta Pandan"  : (1, "sdt"),
+            "Gula Merah"    : (100, "gram"),
+            "Kelapa Parut"  : (150, "gram")
         }
 
         super().__init__(
-            nama_produk="Klepon",
-            kode_produk="KB001",
-            bahan_baku=bahan,
-            jumlah_produksi=20,
-            biaya_produksi=40000,
-            harga_jual_per_pcs=6000
+            nama_produk         ="Klepon",
+            kode_produk         ="KB001",
+            bahan_baku          =bahan,
+            jumlah_produksi     =20,
+            biaya_produksi      =40000,
+            harga_jual_per_pcs  =6000
         )
 
         self.__langkah_simulasi = []
-        self.__pengemasan = "Belum dikemas"
-        self.__pelabelan = "Belum diberi label"
+        self.__pengemasan   = "Belum dikemas"
+        self.__pelabelan    = "Belum diberi label"
 
     # Method abstrak dari ProdukRoti
     def pengadonan(self):

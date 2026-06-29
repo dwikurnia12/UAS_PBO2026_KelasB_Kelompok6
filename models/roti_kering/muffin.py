@@ -18,26 +18,26 @@ class Muffin(ProdukRoti, Pengadonan, Pengembangan, Pemanggangan, Pengemasan, Pel
 
     def __init__(self):
         bahan = {
-            "Tepung Terigu": (250, "gram"),
-            "Gula Pasir": (150, "gram"),
-            "Telur": (2, "butir"),
-            "Susu Cair": (200, "ml"),
-            "Mentega": (100, "gram"),
-            "Baking Powder": (1, "sdt"),
-            "Choco Chips": (100, "gram")
+            "Tepung Terigu" : (250, "gram"),
+            "Gula Pasir"    : (150, "gram"),
+            "Telur"         : (2, "butir"),
+            "Susu Cair"     : (200, "ml"),
+            "Mentega"       : (100, "gram"),
+            "Baking Powder" : (1, "sdt"),
+            "Choco Chips"   : (100, "gram")
         }
 
         super().__init__(
-            nama_produk="Muffin",
-            kode_produk="MF001",
-            bahan_baku=bahan,
-            jumlah_produksi=12,
-            biaya_produksi=50000,
-            harga_jual_per_pcs=10000
+            nama_produk         ="Muffin",
+            kode_produk         ="MF001",
+            bahan_baku          =bahan,
+            jumlah_produksi     =12,
+            biaya_produksi      =50000,
+            harga_jual_per_pcs  =10000
         )
         self.__langkah_simulasi = []
-        self.__pengemasan = "Belum dikemas"
-        self.__pelabelan = "Belum diberi label"
+        self.__pengemasan   = "Belum dikemas"
+        self.__pelabelan    = "Belum diberi label"
 
     # Method abstrak dari ProdukRoti
     def pengadonan(self):
