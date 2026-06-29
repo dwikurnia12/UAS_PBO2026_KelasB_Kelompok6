@@ -163,7 +163,7 @@ class ProdukRoti(ABC):
     def aduk(self) -> str:
         """
         Proses pengadonan.
-        Setiap produk memiliki teknik pengadonan yang berbeda,
+        Setiap produk memiliki teknik pengadonan berbeda,
         sehingga method ini bersifat abstrak.
         """
         pass
