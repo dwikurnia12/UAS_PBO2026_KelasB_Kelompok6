@@ -22,7 +22,7 @@ Proyek ini dibangun dengan menerapkan konsep-konsep inti **Pemrograman Berorient
 | **Inheritance** | `RotiManis`, `Croissant`, `RotiKering`,  `RotiBasah` → `ProdukRoti` |
 | **Interface** | `pelabelan, pemanggangan, pengemasan, pengembangan, perebusan, topping` |
 | **Encapsulation** | Atribut private pada `ProdukRoti` dengan property getter |
-| **Polymorphism** | Setiap subclass mengimplementasikan `pengadukan()` dan proses produksi secara berbeda |
+| **Polymorphism** | Setiap subclass mengimplementasikan `pengadonan()` dan proses produksi secara berbeda |
 
 ---
 
