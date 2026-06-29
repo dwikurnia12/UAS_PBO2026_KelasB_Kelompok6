@@ -19,10 +19,10 @@ Proyek ini dibangun dengan menerapkan konsep-konsep inti **Pemrograman Berorient
 | Konsep | Penerapan |
 |--------|-----------|
 | **Abstract Class** | `ProdukRoti` sebagai superclass abstrak |
-| **Inheritance** | `RotiManis`, `Croissant`, `KueKering`,  `KueBasah` → `ProdukRoti` |
+| **Inheritance** | `RotiManis`, `Croissant`, `RotiKering`,  `RotiBasah` → `ProdukRoti` |
 | **Interface** | `pelabelan, pemanggangan, pengemasan, pengembangan, perebusan, topping` |
 | **Encapsulation** | Atribut private pada `ProdukRoti` dengan property getter |
-| **Polymorphism** | Setiap subclass mengimplementasikan `aduk()` dan proses produksi secara berbeda |
+| **Polymorphism** | Setiap subclass mengimplementasikan `pengadukan()` dan proses produksi secara berbeda |
 
 ---
 
@@ -115,13 +115,14 @@ ProdukRoti  (abstract)
 ### Hierarki Inheritance
 ```
 ProdukRoti (abstract)
-├── RotiManis     + Pengembangan
-├── Croissant     + Pengembangan
-└── KueKering (abstract)  + Topping
-    ├── ButterCookies
-    ├── Muffin        + Pengembangan
-    ├── Klepon        + Pengembangan
-    └── KueSoes
+├── RotiManis        + Pengembangan
+├── croissant         + Pengembangan
+├── RotiBasah
+│   ├── Klepon        
+│   └── Kue soes      + Pengembangan
+└── RotiKering        + Topping
+    ├── Butter cookies
+    └── Muffin        + Pengembangan
 ```
 
 ### Interfaces
