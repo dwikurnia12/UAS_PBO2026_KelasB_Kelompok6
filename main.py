@@ -108,7 +108,7 @@ def main():
             break
 
         else:
-            Display.erroe(
+            Display.error(
                 "Pilihan menu tidak valid."
             )
 
