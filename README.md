@@ -125,11 +125,14 @@ ProdukRoti (abstract)
 
 ### Interfaces
 ```
-IBakeable     → panggang()
-IPackageable  → kemas()
-ILabelable    → label()
-IDevelopable  → kembangkan()
-IToppable     → beri_topping()
+IPemanggangan   → pemanggangan()
+IPerebusan      → perebusan()
+IPengadonan     → pengadonan()
+IPengemasan     → pengemasan()
+IPelabelan      → pelabelan()
+IPengembangan   → pengembangan()
+ITopping        → topping()
+
 ```
 
 > Diagram UML lengkap tersedia di folder `docs/` (dibuat menggunakan Diagrams.io)
