@@ -7,6 +7,9 @@ Testing Muffin, Klepon, dan Kue Soes
 from models.roti_kering.muffin import Muffin
 from models.roti_basah.klepon import Klepon
 from models.roti_basah.kue_soes import KueSoes
+from models.roti_manis import RotiManis
+from models.croissant import Croissant
+from models.roti_kering.buttercookies import ButterCookies
 
 
 def main():
@@ -14,7 +17,10 @@ def main():
     produk_list = [
         Muffin(),
         Klepon(),
-        KueSoes()
+        KueSoes(),
+        RotiManis(),
+        Croissant(),
+        ButterCookies(),
     ]
 
     for produk in produk_list:
