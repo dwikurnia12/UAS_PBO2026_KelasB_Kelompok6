@@ -1,5 +1,9 @@
 from models.produk_roti import ProdukRoti
-from interfaces import Pengadonan, Pemanggangan, Pengemasan, Pelabelan
+
+from interfaces.pengadonan import Pengadonan
+from interfaces.pemanggangan import Pemanggangan
+from interfaces.pengemasan import Pengemasan
+from interfaces.pelabelan import Pelabelan
 
 class ButterCookies(ProdukRoti, Pengadonan, Pemanggangan, Pengemasan, Pelabelan):
     def __init__(self):

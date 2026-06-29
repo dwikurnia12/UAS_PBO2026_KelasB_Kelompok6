@@ -7,7 +7,7 @@ Konsep OOP       : Encapsulation, Object Management, Composition, Single Respons
 
 """
 
-from data.data_product import DATA_PRODUK
+from data_product import DATA_PRODUK
 
 class SistemBakery:
     def __init__(self):

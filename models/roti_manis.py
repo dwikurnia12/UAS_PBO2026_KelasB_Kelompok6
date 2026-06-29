@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 """
 Subclass Roti Manis untuk produk Hanari Bakery.
 
@@ -6,7 +5,13 @@ Tanggung Jawab : Arofa Karindra Bimantara (K3525051)
 Konsep OOP     : Inheritance, Polymorphism
 """
 from models.produk_roti import ProdukRoti
-from interfaces import (Pengadonan, Pengembangan, Pemanggangan, Topping, Pengemasan, Pelabelan)
+
+from interfaces.pengadonan import Pengadonan
+from interfaces.pengembangan import Pengembangan
+from interfaces.pemanggangan import Pemanggangan
+from interfaces.topping import Topping
+from interfaces.pengemasan import Pengemasan
+from interfaces.pelabelan import Pelabelan
 
 class RotiManis(ProdukRoti, Pengadonan, Pengembangan, Pemanggangan, Topping, Pengemasan, Pelabelan):
     def __init__(self):
@@ -72,5 +77,3 @@ class RotiManis(ProdukRoti, Pengadonan, Pengembangan, Pemanggangan, Topping, Pen
         print(f"Topping      : {self.__topping}")
         print(f"Kemasan      : {self.__pengemasan}")
         print(f"Label Produk : {self.__pelabelan}")
-=======
->>>>>>> Stashed changes

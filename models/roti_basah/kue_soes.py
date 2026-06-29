@@ -5,13 +5,12 @@ Class Kue Soes
 Tanggung Jawab : Diah
 """
 from models.produk_roti import ProdukRoti
-from interfaces import (
-    Pengadonan,
-    Pemanggangan,
-    Topping,
-    Pengemasan,
-    Pelabelan
-)
+
+from interfaces.pengadonan import Pengadonan
+from interfaces.pemanggangan import Pemanggangan
+from interfaces.topping import Topping
+from interfaces.pengemasan import Pengemasan
+from interfaces.pelabelan import Pelabelan
 
 class KueSoes(ProdukRoti, Pengadonan, Pemanggangan, Topping, Pengemasan, Pelabelan):
 

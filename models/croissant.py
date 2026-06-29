@@ -1,5 +1,10 @@
 from models.produk_roti import ProdukRoti
-from interfaces import Pengadonan, Pengembangan, Pemanggangan, Pengemasan, Pelabelan
+
+from interfaces.pengadonan import Pengadonan
+from interfaces.pengembangan import Pengembangan
+from interfaces.pemanggangan import Pemanggangan
+from interfaces.pengemasan import Pengemasan
+from interfaces.pelabelan import Pelabelan
 
 class Croissant(ProdukRoti, Pengadonan, Pengembangan, Pemanggangan, Pengemasan, Pelabelan):
     def __init__(self):
