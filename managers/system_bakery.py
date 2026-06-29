@@ -194,7 +194,7 @@ class SistemBakery:
         print("=" * 40)
 
         print(
-            f"Produk    : {produk.nama_produk}"
+            f"Produk            : {produk.nama_produk}"
         )
 
         print(
@@ -202,15 +202,15 @@ class SistemBakery:
         )
 
         print(
-            f"Biaya Produksi   : Rp {hasil_profit['total_biaya']:,.0f}"
+            f"Biaya Produksi    : Rp {hasil_profit['total_biaya']:,.0f}"
         )
 
         print(
-            f"Pendapatan    : Rp {hasil_profit['total_pendapatan']:,.0f}"
+            f"Pendapatan        : Rp {hasil_profit['total_pendapatan']:,.0f}"
         )
 
         print(
-            f"Profit    : Rp {hasil_profit['profit']:,.0f}"
+            f"Profit            : Rp {hasil_profit['profit']:,.0f}"
         )
 
         print("\n BAHAN BAKU YANG DIPERLUKAN")

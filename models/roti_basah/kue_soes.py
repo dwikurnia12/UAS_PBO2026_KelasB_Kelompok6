@@ -47,10 +47,10 @@ class KueSoes(ProdukRoti, Pengadonan, Pemanggangan, Topping, Pengemasan, Pelabel
         self.__langkah_simulasi.clear()
 
         self.__langkah_simulasi.append(self.pengadonan())
-        self.__langkah_simulasi.append(Pemanggangan.soes())
-        self.__langkah_simulasi.append(Topping.soes())
+        self.__langkah_simulasi.append(Pemanggangan.kue_soes())
+        self.__langkah_simulasi.append(Topping.kue_soes())
         self.__langkah_simulasi.append(Pengemasan.kue_soes())
-        self.__langkah_simulasi.append(Pelabelan.soes())
+        self.__langkah_simulasi.append(Pelabelan.kue_soes())
         self.__pengemasan   = "Box Pastry"
         self.__pelabelan    = "KB002-Kelompok 6B"
     

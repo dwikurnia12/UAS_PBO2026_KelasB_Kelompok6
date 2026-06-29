@@ -9,11 +9,10 @@ from models.produk_roti import ProdukRoti
 from interfaces.pengadonan import Pengadonan
 from interfaces.pengembangan import Pengembangan
 from interfaces.pemanggangan import Pemanggangan
-from interfaces.topping import Topping
 from interfaces.pengemasan import Pengemasan
 from interfaces.pelabelan import Pelabelan
 
-class RotiManis(ProdukRoti, Pengadonan, Pengembangan, Pemanggangan, Topping, Pengemasan, Pelabelan):
+class RotiManis(ProdukRoti, Pengadonan, Pengembangan, Pemanggangan, Pengemasan, Pelabelan):
     def __init__(self):
         super().__init__(
             nama_produk ="Roti Manis",
@@ -33,7 +32,6 @@ class RotiManis(ProdukRoti, Pengadonan, Pengembangan, Pemanggangan, Topping, Pen
         )
 
         self.__langkah_simulasi = []
-        self.__topping      = "Belum diberi topping"
         self.__pengemasan   = "Belum dikemas"
         self.__pelabelan    = "Belum diberi label"
 
@@ -45,10 +43,6 @@ class RotiManis(ProdukRoti, Pengadonan, Pengembangan, Pemanggangan, Topping, Pen
 
     def pemanggangan(self, suhu: int, durasi: int) -> None:
         self.__langkah_simulasi.append(Pemanggangan.roti_manis())
-
-    def topping(self, jenis_topping: str) -> None:
-        self.__topping = jenis_topping
-        self.__langkah_simulasi.append(Topping.roti_manis())
 
     def pengemasan(self, jenis_kemasan: str) -> None:
         self.__pengemasan = jenis_kemasan
@@ -64,7 +58,6 @@ class RotiManis(ProdukRoti, Pengadonan, Pengembangan, Pemanggangan, Topping, Pen
         self.pengadonan()
         self.pengembangan(45)
         self.pemanggangan(180, 20)
-        self.topping("Cokelat Ceres")
         self.pengemasan("Plastik OPP Premium")
         self.pelabelan("RM001-Kelompok 6B")
 
@@ -79,6 +72,5 @@ class RotiManis(ProdukRoti, Pengadonan, Pengembangan, Pemanggangan, Topping, Pen
             for langkah in self.__langkah_simulasi:
                 print(langkah)
 
-        print(f"Topping      : {self.__topping}")
         print(f"Kemasan      : {self.__pengemasan}")
         print(f"Label Produk : {self.__pelabelan}")
